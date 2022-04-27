@@ -1,30 +1,21 @@
-import UserInfos from "./UserInfos"
 import "./MainContainer.css"
+import UserImage from "./UserImage";
 
 function MainContainer(props){
-
+    const {items}=props;
     return(
         <div class="main-container">
-        <UserInfos
-        userName={props.items[0].userName} 
-       
-        > </UserInfos>
-        <UserInfos 
-        userName={props.items[1].userName}
-        
-        > </UserInfos>
-        <UserInfos
-        userName={props.items[2].userName}
-        
-        > </UserInfos>
-         <UserInfos
-        userName={props.items[3].userName}
-        
-        > </UserInfos>
-            <UserInfos
-        userName={props.items[3].userName}
-        
-        > </UserInfos>
+        { 
+        items.map((userdata) => (
+            <div className="user-infos"> 
+            <UserImage />
+              <div className="user-details">
+                 <h2>{userdata.userName}</h2>
+                 <button className="follow-user">Follow</button>
+                 </div>
+              </div>  
+        ))
+            }
         </div>
          
     )
