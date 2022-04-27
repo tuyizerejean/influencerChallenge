@@ -10,7 +10,7 @@ function MainContainer(props){
             <div className="user-infos"> 
             <UserImage />
               <div className="user-details">
-                 <h2>{userdata.userName}</h2>
+                 <h2>{userdata.name}</h2>
                  <button className="follow-user">Follow</button>
                  </div>
               </div>  
