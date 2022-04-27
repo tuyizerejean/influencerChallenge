@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/reactWork1/static/css/main.cbc90196.css",
+    "main.js": "/reactWork1/static/js/main.82a428b8.js",
+    "index.html": "/reactWork1/index.html",
+    "main.cbc90196.css.map": "/reactWork1/static/css/main.cbc90196.css.map",
+    "main.82a428b8.js.map": "/reactWork1/static/js/main.82a428b8.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.cbc90196.css",
+    "static/js/main.82a428b8.js"
+  ]
+}

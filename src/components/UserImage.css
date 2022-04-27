@@ -1,0 +1,13 @@
+.user-image {
+    display: flex;
+    flex-direction: column;
+    width: 5.5rem;
+    height: 5.5rem;
+    border: 1px solid #ececec;
+    background-color: #246329;
+    color: white;
+    border-radius: 50px;
+    align-items: center;
+    justify-content: center;
+  }
+  
