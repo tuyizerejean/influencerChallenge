@@ -1,23 +1,23 @@
-import { FOLLOW_INFLUENCER, GET_INFLUENCERS, UN_FOLLOW_INFLUENCER} from "../types/influencer.types";
+import { FOLLOWING_INFLUENCERS, RETRIEVE_INFLUENCERS, UN_FOLLOWING_INFLUENCER} from "../types/influencer.types";
 import influencer from "../data";
 
 export const getInfluencers = () => {
     return {
-        type: GET_INFLUENCERS,
+        type: RETRIEVE_INFLUENCERS,
         payload: influencer,
     };
 };
 
 export const followInfluencer = (id) => {
     return {
-       type: FOLLOW_INFLUENCER,
+       type: FOLLOWING_INFLUENCERS,
        payload: id
     };
 };
 
 export const unFollowInfluencer = (id) => {
     return {
-       type: UN_FOLLOW_INFLUENCER,
+       type: UN_FOLLOWING_INFLUENCER,
        payload: id
     };
 };

@@ -5,7 +5,6 @@ import './App.css';
 import Influencer from './components/influencer/Influencer';
 import {getInfluencers} from './redux/actions/influencer.actions'
 
-
 function App(props) {
   useEffect(() => {
     props.getInfluencers();
@@ -14,6 +13,7 @@ function App(props) {
   }, [props.influencers])
   return (
     <div className="container">
+     
       {
         props.influencers.length === 0 ? 
           <p>Loading ...</p> : 

@@ -7,7 +7,7 @@ const Influencer = (props) => {
     return ( 
         <div className={styles.influencer}>
             <div className={styles.bio}>
-                <img className={styles.profile} src={influencer.profilePicture} alt={influencer.profilePicture}/>
+                <img className={styles.profile} src={influencer.profilePicture} alt="profile"/>
                 <div>
                     <strong><p>@{influencer.username}</p></strong>
                     <p className={styles.title}>{influencer.name}</p>

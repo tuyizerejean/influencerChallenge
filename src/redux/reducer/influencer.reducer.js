@@ -1,19 +1,19 @@
-import { FOLLOW_INFLUENCER, GET_INFLUENCERS, UN_FOLLOW_INFLUENCER } from "../types/influencer.types";
+import { FOLLOWING_INFLUENCERS, RETRIEVE_INFLUENCERS, UN_FOLLOWING_INFLUENCER } from "../types/influencer.types";
 
 const INITIAL_STATE = [];
 
 const reducer = (state = INITIAL_STATE, action) => {
     switch (action.type) {
-        case GET_INFLUENCERS:
+        case RETRIEVE_INFLUENCERS:
            return action.payload;
-        case FOLLOW_INFLUENCER:
+        case FOLLOWING_INFLUENCERS:
            state.map((influencer) => {
                if(influencer.userId === action.payload){
                   influencer.followed = true
                }
            })
            return [...state]
-         case UN_FOLLOW_INFLUENCER:
+         case UN_FOLLOWING_INFLUENCER:
          state.map((influencer) => {
                if(influencer.userId === action.payload){
                   influencer.followed = false
