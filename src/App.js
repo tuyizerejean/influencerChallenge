@@ -1,22 +1,41 @@
-import React from "react";
-import "./index.css";
-import MainContainer from './components/MainContainer';
- 
-export default function App() {
-  const userData=[
-   { userName:"Tuyizere Jean de Dieu"},
-    { userName:"Cyimana Faisal"},
-    { userName:"Uwacu Deny"},
-    { userName:"Ganza Bobu"},
-    { userName:"Ganza Bobu"},
-    { userName:"Ganza Bobu"},
-    
-  ]
-   return (
-     <div>
-       <h2 className="App"> Welcome to Our Chatting Application</h2>
-       <MainContainer items={userData}></MainContainer> 
-     </div>
-   )
+
+import { useEffect } from "react";
+import { connect } from "react-redux";
+import './App.css';
+import Influencer from './components/influencer/Influencer';
+import {getInfluencers} from './redux/actions/influencer.actions'
+
+
+function App(props) {
+  useEffect(() => {
+    props.getInfluencers();
+  })
+  useEffect(() => {
+  }, [props.influencers])
+  return (
+    <div className="container">
+      {
+        props.influencers.length === 0 ? 
+          <p>Loading ...</p> : 
+          props.influencers.map((influencer) => (
+            <Influencer influencer={influencer} key={influencer.userId}/>
+          )
+        )
+      }
+    </div>
+  );
 }
 
+const mapStateToProps = state => {
+  return {
+    influencers: state.influencers,
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    getInfluencers: () => dispatch(getInfluencers()),
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App)
